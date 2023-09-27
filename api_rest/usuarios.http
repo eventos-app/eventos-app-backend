@@ -1,0 +1,10 @@
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+  "nombres":"Juan Miguel",
+  "apellidos":"Paredez Orellana",
+  "email":"juanito060400@gmail.com",
+  "contrasenia":"juanparedez",
+  "habilitado":1
+}
