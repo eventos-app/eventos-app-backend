@@ -7,6 +7,7 @@ const Organizadores=require("../models/organizadores_model");
 const Eventos=require("../models/eventos_model");
 
 ruta.get("eventos-organizador/:email",(req,res)=>{
+    let email=req.params.email;
     let id=obtenerIdOrganizador(email);
     let participaciones=obtenerParticipaciones(id);
     let resultado=obtenerEventos(participaciones);

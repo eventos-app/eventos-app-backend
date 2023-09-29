@@ -42,6 +42,7 @@ app.use('/api/eventos', eventos);
 app.use('/api/espacios', eventos);
 app.use('/api/auth', auth);
 app.use('/api/entradas', auth);
+app.use('/api/participantes', auth);
 
 
 const port = process.env.PORT || 3000;
