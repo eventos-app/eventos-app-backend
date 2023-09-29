@@ -21,4 +21,4 @@ const Participaciones = sequelize.define(
     timestamps: false,
   }
 );
-module.exports = Eventos;
+module.exports = Participaciones;

@@ -19,6 +19,10 @@ const Eventos = sequelize.define(
     fecha: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    habilitado:{
+      type:DataTypes.INTEGER,
+      allowNull:false
     }
   },
   {
