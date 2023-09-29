@@ -2,7 +2,7 @@ const express = require('express');
 const ruta = express.Router();
 const verifyIdToken = require('../middlewares/auth');
 
-const Participantes = require('../models/participantes_model');
+const Organizadores = require('../models/participantes_model');
 
 ruta.get("perfil/:email",(req,res)=>{
     let email=req.params.email;
@@ -33,7 +33,7 @@ ruta.put("/:email",(req,res)=>{
     })
 })
 async function actualizarPerfil(email,datos){
-    let perfil=await Participantes.findOne({
+    let perfil=await Organizadores.findOne({
         where:{
             email:e
         }
@@ -44,7 +44,7 @@ async function actualizarPerfil(email,datos){
 
 }
 async function obtenerPerfil(e){
-    let perfil=await Participantes.findOne({
+    let perfil=await Organizadores.findOne({
         where:{
             email:e
         }
