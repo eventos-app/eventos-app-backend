@@ -6,6 +6,8 @@ const mysql = require("mysql");
 const express = require('express');
 
 
+const cors = require("cors");
+
 
 
 
@@ -27,12 +29,22 @@ connection.connect((err) => {
 
 
 const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:4200",
+    optionsSuccessStatus: 200,
+  })
+);
+
 app.use(express.json());
 app.use('/api/usuarios', usuarios);
 app.use('/api/eventos', eventos);
+app.use('/api/espacios', eventos);
 app.use('/api/auth', auth);
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log('Api RESTFul Ok, y ejecutándose...');
 })
+

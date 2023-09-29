@@ -19,6 +19,29 @@ ruta.get('/', verifyIdToken, (req, res) => {
     })
 });
 
+ruta.get('/ultimos-eventos', (req, res) => {
+    let resultado = listaUltimosEventos();
+    resultado.then(eventos => {
+        res.json(eventos)
+    }).catch(err => {
+        res.status(400).json(
+            {
+                err
+            }
+        )
+    })
+});
+
+async function listaUltimosEventos(){
+    let eventos = await Eventos.findAll(
+        {
+            order: [['fecha', 'DESC']],
+            limit: 10,
+        }
+    );
+    return eventos;
+}
+
 async function listaEventos(){
     let eventos = await Eventos.findAll();
     return eventos;

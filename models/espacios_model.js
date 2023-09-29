@@ -28,3 +28,4 @@ const Espacios=sequelize.define(
         timestamp:false
     }
 )
+module.exports=Espacios;
