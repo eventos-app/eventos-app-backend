@@ -1,6 +1,7 @@
 const admin = require("firebase-admin");
 
-var serviceAccount = require("../eventos-project-560da-firebase-adminsdk-2kxav-63b9ed2384.json");
+// Put your credentials json name to use firebase
+var serviceAccount = require("../credentials-firebase.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   });
